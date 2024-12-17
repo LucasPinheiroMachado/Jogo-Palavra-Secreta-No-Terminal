@@ -22,11 +22,11 @@ while jogo:
             print('Letra invalida')
             continue
         acerto = funcoesJogo.verificarLetra(letra, palavra)
-        if acerto:
+        if (acerto) and (letra not in letras):
             pontuacaoAtiva += 1
             pontuacaoTotal += 1
             letras += letra
-        else:
+        elif(not acerto):
             erros += 1
         if (pontuacaoAtiva) >= (funcoesJogo.qtdLetras(palavra)):
             exibirPalavra = funcoesJogo.exibidor(letras, palavra)
